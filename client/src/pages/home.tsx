@@ -1,17 +1,24 @@
 import Navigation from "@/components/navigation.tsx";
 import HeroSection from "@/components/heroSection.tsx";
-import AboutSection from "@/components/aboutSection.tsx";
+import {AboutMeSection} from "@/components/aboutSection.tsx";
+import {ServicesSection} from "@/components/servicesSection.tsx";
+import {SkillsSection} from "@/components/skillSection.tsx";
+import {ExperienceSection} from "@/components/experienceSection.tsx";
 import ProjectsSection from "@/components/projectsSection.tsx";
-import SkillsSection from "@/components/skillsSection.tsx";
+import Footer from "@/components/footer.tsx";
+import React from "react";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <SkillsSection />
+        <Navigation />
+        <HeroSection />
+        <AboutMeSection />
+        <ServicesSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <Footer />
     </div>
   );
 }

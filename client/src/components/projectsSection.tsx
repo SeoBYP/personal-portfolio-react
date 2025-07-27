@@ -236,7 +236,7 @@ export default function ProjectsSection() {
     };
 
     return (
-        <section id="projects" className="py-20 relative overflow-hidden" style={{backgroundColor: '#161616'}}>
+        <section id="projects" className="py-20 relative overflow-hidden" style={{backgroundColor: '#0F0F0F'}}>
             {/* Background Text */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="text-[15rem] font-bold text-gray-800/5 select-none leading-none">

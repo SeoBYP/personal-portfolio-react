@@ -1,10 +1,12 @@
 import React from 'react';
-import Navigation from './components/navigation.tsx';
-import HeroSection from './components/heroSection.tsx';
-import AboutSection from './components/aboutSection.tsx';
-import SkillsSection from './components/skillsSection.tsx';
-import ProjectsSection from './components/projectsSection.tsx';
-import Footer from './components/footer.tsx';
+import Navigation from './components/navigation';
+import HeroSection from './components/heroSection';
+import { AboutMeSection } from './components/aboutSection';
+import { ServicesSection } from './components/servicesSection';
+import { SkillsSection } from './components/skillSection';
+import { ExperienceSection } from './components/experienceSection';
+import ProjectsSection from './components/projectsSection';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
@@ -12,8 +14,10 @@ function App() {
         <div className="min-h-screen bg-gray-900 text-white">
             <Navigation />
             <HeroSection />
-            <AboutSection />
+            <AboutMeSection />
+            <ServicesSection />
             <SkillsSection />
+            <ExperienceSection />
             <ProjectsSection />
             <Footer />
         </div>

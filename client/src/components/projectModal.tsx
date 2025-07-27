@@ -65,18 +65,18 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               <div className="grid md:grid-cols-3 gap-8 mb-8">
                 <div className="md:col-span-2">
                   <h3 className="text-2xl font-semibold text-white mb-4">프로젝트 개요</h3>
-                  <p className="text-gray-300 mb-6">
+                  <p className="text-gray-300 mb-6 leading-relaxed">
                     {project.longDescription}
                   </p>
 
                   {project.features && project.features.length > 0 && (
                       <>
                         <h4 className="text-xl font-semibold text-white mb-3">주요 기능</h4>
-                        <ul className="space-y-2 text-gray-300 mb-6">
+                        <ul className="space-y-3 text-gray-300 mb-6">
                           {project.features.map((feature, index) => (
-                              <li key={index} className="flex items-start space-x-2">
-                                <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{backgroundColor: '#13FF00'}} />
-                                <span>{feature}</span>
+                              <li key={index} className="flex items-start space-x-3">
+                                <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{backgroundColor: '#13FF00'}} />
+                                <span className="leading-relaxed">{feature}</span>
                               </li>
                           ))}
                         </ul>
@@ -86,18 +86,18 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   {project.challenges && (
                       <>
                         <h4 className="text-xl font-semibold text-white mb-3">기술적 도전</h4>
-                        <p className="text-gray-300 mb-6">{project.challenges}</p>
+                        <p className="text-gray-300 mb-6 leading-relaxed">{project.challenges}</p>
                       </>
                   )}
 
                   {project.achievements && project.achievements.length > 0 && (
                       <>
                         <h4 className="text-xl font-semibold text-white mb-3">성과</h4>
-                        <ul className="space-y-2 text-gray-300">
+                        <ul className="space-y-3 text-gray-300">
                           {project.achievements.map((achievement, index) => (
-                              <li key={index} className="flex items-start space-x-2">
-                                <span className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{backgroundColor: '#13FF00'}} />
-                                <span>{achievement}</span>
+                              <li key={index} className="flex items-start space-x-3">
+                                <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{backgroundColor: '#13FF00'}} />
+                                <span className="leading-relaxed">{achievement}</span>
                               </li>
                           ))}
                         </ul>
@@ -109,7 +109,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   {/* Project Info */}
                   <div className="rounded-xl p-6 mb-6" style={{backgroundColor: '#161616'}}>
                     <h4 className="text-lg font-semibold text-white mb-4">프로젝트 정보</h4>
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       <div>
                         <span className="text-sm text-gray-400">기간</span>
                         <p className="font-medium text-gray-300">{project.duration}</p>
@@ -130,7 +130,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     <h4 className="text-lg font-semibold text-white mb-4">기술 스택</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech, index) => (
-                          <Badge key={index} className="text-black" style={{backgroundColor: '#13FF00'}}>
+                          <Badge key={index} className="text-black text-xs px-3 py-1" style={{backgroundColor: '#13FF00'}}>
                             {tech}
                           </Badge>
                       ))}
@@ -144,7 +144,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                 {project.liveUrl && (
                     <Button
                         asChild
-                        className="flex-1 text-black"
+                        className="flex-1 text-black font-semibold"
                         style={{backgroundColor: '#13FF00'}}
                     >
                       <a
@@ -162,10 +162,15 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                     <Button
                         variant="outline"
                         asChild
-                        className="flex-1 text-white border-white hover:text-black"
-                        style={{'--hover-bg': '#13FF00'}}
-                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#13FF00'}
-                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                        className="flex-1 text-white border-white hover:text-black hover:border-green-400"
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = '#13FF00';
+                          e.currentTarget.style.borderColor = '#13FF00';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.borderColor = 'white';
+                        }}
                     >
                       <a
                           href={project.githubUrl}

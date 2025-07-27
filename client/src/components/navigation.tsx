@@ -11,8 +11,8 @@ export default function Navigation() {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 100);
 
-            // Update active section based on scroll position (순서 변경)
-            const sections = ['home', 'about', 'skills', 'projects'];
+            // Update active section based on scroll position
+            const sections = ['home', 'about', 'services', 'skills', 'experience', 'projects'];
             const scrollPosition = window.scrollY + 200;
 
             for (const sectionId of sections) {
@@ -47,25 +47,28 @@ export default function Navigation() {
 
     const navItems = [
         { href: "#home", label: "Home" },
-        { href: "#about", label: "About me" },
+        { href: "#about", label: "About" },
+        { href: "#services", label: "Services" },
         { href: "#skills", label: "Skills" },
-        { href: "#projects", label: "Projects" }
+        { href: "#experience", label: "Experience" },
+        { href: "#projects", label: "Projects" },
     ];
 
     return (
         <>
             <nav className={`fixed top-0 w-full z-50 transition-all duration-300 border-b border-gray-700/50 ${
-                isScrolled
-                    ? 'backdrop-blur-md'
-                    : 'bg-transparent'
+                isScrolled ? 'backdrop-blur-md' : 'bg-transparent'
             }`}
                  style={{
                      backgroundColor: isScrolled ? '#161616ee' : 'transparent'
                  }}>
                 <div className="max-w-6xl mx-auto px-6">
                     <div className="flex justify-between items-center py-4">
-                        <div className="text-2xl font-bold text-white">
-                            김게임개발자
+                        <div
+                            className="text-2xl font-bold text-white cursor-pointer"
+                            onClick={() => scrollToSection('#home')}
+                        >
+                            서범필
                         </div>
 
                         {/* Desktop Navigation */}
@@ -128,7 +131,7 @@ export default function Navigation() {
             </nav>
 
             {/* Pagination dots */}
-            <div className="fixed right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-20">
+            <div className="fixed right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-20 hidden lg:flex">
                 {navItems.map((item) => (
                     <button
                         key={item.href}

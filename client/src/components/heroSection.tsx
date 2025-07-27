@@ -1,20 +1,19 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Download, Github, Linkedin, Twitter, Mail, Instagram, Globe } from 'lucide-react';
+import { Download, Github, Linkedin, Mail, Instagram, Globe } from 'lucide-react';
 
 export default function HeroSection() {
     const developerInfo = {
         name: "서범필",
         title: "Game Client Developer",
-        bio: "언리얼과 유니티를 좋아하는 학부생 게임 개발자 실제 게임 문제를 해결하는 아이디어 개발하는 것을 좋아합니다.",
-        email: "game.developer@example.com",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+        bio: "언리얼과 유니티를 좋아하는 학부생 게임 개발자. 실제 게임 문제를 해결하는 아이디어 개발하는 것을 좋아합니다.",
+        email: "seobp1020@naver.com",
         socialLinks: {
             instagram: "https://instagram.com",
             github: "https://github.com/gamedeveloper",
             linkedin: "https://linkedin.com/in/gamedeveloper",
-            dribbble: "https://dribbble.com",
-            behance: "https://behance.net"
+            blog: "https://blog.naver.com",
+            email: "seobp1020@naver.com"
         }
     };
 
@@ -51,32 +50,19 @@ export default function HeroSection() {
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden"
                  style={{backgroundColor: '#161616'}}>
-
-            {/* Navigation Dots */}
-            <div className="absolute right-8 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 z-20">
-                {['Home', 'About me', 'Projects', 'Contact'].map((section, index) => (
-                    <button
-                        key={section}
-                        className="w-3 h-3 rounded-full transition-all duration-300 hover:scale-125"
-                        style={{backgroundColor: index === 0 ? '#13FF00' : '#666'}}
-                        title={section}
-                    />
-                ))}
-            </div>
-
             <div className="relative z-10 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
                 <div className="space-y-6">
                     <div className="space-y-2">
                         <div className="text-lg font-medium" style={{color: '#13FF00'}}>
-                            서범필
+                            안녕하세요! 👋
                         </div>
                         <div className="h-1 w-20 bg-gray-600 rounded"/>
                     </div>
 
                     <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                        Game Client<br/>
-                        Developer
+                        {developerInfo.name}<br/>
+                        <span style={{color: '#13FF00'}}>Game Developer</span>
                     </h1>
 
                     <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
@@ -95,18 +81,18 @@ export default function HeroSection() {
                             className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 text-black"
                             style={{backgroundColor: '#13FF00'}}
                         >
-                            Portfolio
+                            View Portfolio
                         </Button>
                     </div>
 
                     {/* Social Links */}
                     <div className="flex gap-4 pt-4">
                         {[
-                            {icon: Instagram, href: developerInfo.socialLinks.instagram},
-                            {icon: Github, href: developerInfo.socialLinks.github},
-                            {icon: Linkedin, href: developerInfo.socialLinks.linkedin},
-                            {icon: Globe, href: developerInfo.socialLinks.dribbble},
-                            {icon: Mail, href: `mailto:${developerInfo.email}`}
+                            {icon: Instagram, href: developerInfo.socialLinks.instagram, label: "Instagram"},
+                            {icon: Github, href: developerInfo.socialLinks.github, label: "GitHub"},
+                            {icon: Linkedin, href: developerInfo.socialLinks.linkedin, label: "LinkedIn"},
+                            {icon: Globe, href: developerInfo.socialLinks.blog, label: "Blog"},
+                            {icon: Mail, href: `mailto:${developerInfo.email}`, label: "Email"}
                         ].map((social, index) => {
                             const Icon = social.icon;
                             return (
@@ -115,7 +101,8 @@ export default function HeroSection() {
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 text-gray-400 hover:text-white"
+                                    className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 text-gray-400 hover:text-white border border-gray-600 hover:border-green-400"
+                                    title={social.label}
                                 >
                                     <Icon className="w-5 h-5"/>
                                 </a>
@@ -124,23 +111,18 @@ export default function HeroSection() {
                     </div>
                 </div>
 
-                {/* Right Content - Profile Image with Game Engine Logos */}
+                {/* Right Content - Profile with Game Engine Logos */}
                 <div className="relative flex justify-center items-center">
-                    {/* Main Profile Section */}
                     <div className="relative">
                         {/* Green glow circle */}
                         <div className="absolute inset-0 w-80 h-80 mx-auto rounded-full opacity-50" style={{
                             background: `radial-gradient(circle, rgba(19, 255, 0, 0.2) 0%, rgba(19, 255, 0, 0.1) 50%, transparent 70%)`
                         }}/>
 
-                        {/* Profile image */}
-                        <div className="relative w-64 h-64 mx-auto rounded-full overflow-hidden z-10 border-4"
-                            style={{borderColor: 'rgba(19, 255, 0, 0.2)'}}>
-                            <img
-                                // src={developerInfo.image}
-                                // alt={developerInfo.name}
-                                className="w-full h-full object-cover grayscale"
-                            />
+                        {/* Profile placeholder */}
+                        <div className="relative w-64 h-64 mx-auto rounded-full overflow-hidden z-10 border-4 flex items-center justify-center"
+                             style={{borderColor: 'rgba(19, 255, 0, 0.2)', backgroundColor: '#1D1D1D'}}>
+                            <div className="text-6xl">🎮</div>
                         </div>
 
                         {/* Unity Logo */}
@@ -174,9 +156,12 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            {/* Background decorative elements */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-600 text-sm">
-                Scroll to explore
+            {/* Scroll indicator */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 text-sm animate-bounce">
+                <div className="flex flex-col items-center gap-2">
+                    <span>Scroll to explore</span>
+                    <div className="w-0.5 h-8 bg-gray-400 rounded-full"></div>
+                </div>
             </div>
         </section>
     );
