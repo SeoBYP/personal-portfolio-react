@@ -8,7 +8,7 @@ import ProjectsSection from "@/components/projectsSection.tsx";
 import Footer from "@/components/footer.tsx";
 import React from "react";
 
-export default function Home() {
+function Home() {
   return (
     <div className="min-h-screen">
         <Navigation />
