@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { useRouter } from '../contexts/RouterContext'; // 추가
+import {developerInfo} from '../data/developerInfo.tsx';
 
 export default function Navigation() {
     const { currentPage, navigate } = useRouter(); // 라우터 훅 사용
@@ -89,7 +90,7 @@ export default function Navigation() {
                             className="text-2xl font-bold text-white cursor-pointer"
                             onClick={() => navigate('home')} // 라우터 navigate 사용
                         >
-                            서범필
+                            {developerInfo.name}
                         </div>
 
                         {/* Desktop Navigation */}

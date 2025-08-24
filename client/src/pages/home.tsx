@@ -1,5 +1,5 @@
 import Navigation from "@/components/navigation.tsx";
-import HeroSection from "@/components/heroSection.tsx";
+import {HeroSection} from "@/components/heroSection.tsx";
 import {AboutMeSection} from "@/components/aboutSection.tsx";
 import {ServicesSection} from "@/components/servicesSection.tsx";
 import {SkillsSection} from "@/components/skillSection.tsx";

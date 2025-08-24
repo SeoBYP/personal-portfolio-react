@@ -9,7 +9,8 @@ import { projectsData } from '../data/projectsData.tsx';
 
 export default function ProjectDetailPage() {
     const { params, goBack } = useRouter();
-    const projectId = parseInt(params.id);
+    const idStr = params.id ?? "";                // id가 없으면 빈 문자열
+    const projectId = Number.parseInt(idStr, 10);
     const project = projectsData.find(p => p.id === projectId);
 
     // 컴포넌트 마운트 시 최상단으로 스크롤

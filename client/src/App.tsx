@@ -2,13 +2,13 @@
 import React from 'react';
 import { RouterProvider, useRouter } from './contexts/RouterContext'; // 추가
 import Navigation from './components/navigation';
-import HeroSection from './components/heroSection';
+import {HeroSection} from './components/heroSection';
 import { AboutMeSection } from './components/aboutSection';
 import { ServicesSection } from './components/servicesSection';
 import { SkillsSection } from './components/skillSection';
 import { ExperienceSection } from './components/experienceSection';
-import ProjectsSection from './components/projectsSection';
-import ProjectDetailPage from './components/ProjectDetailPage.tsx'; // 추가
+import ProjectsSection from '@/components/projectsSection';
+import ProjectDetailPage from "@/components/ProjectDetailPage.tsx";
 import Footer from './components/footer';
 import './App.css';
 
