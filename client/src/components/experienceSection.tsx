@@ -18,24 +18,24 @@ export function ExperienceSection() {
             description: "게임 엔진 기초부터 고급 기능까지 체계적 학습 및 포트폴리오 프로젝트 제작"
         }
     ];
-
-    const achievements = [
-        {
-            title: "Google Play Store 출시",
-            description: "Nuclear-Zero 게임 상용 출시",
-            icon: Award
-        },
-        {
-            title: "게임 공모전 우수상",
-            description: "Nuclear-Zero 프로젝트로 수상",
-            icon: Target
-        },
-        {
-            title: "5개 이상 완성작",
-            description: "다양한 장르의 게임 프로젝트 완료",
-            icon: Gamepad2
-        }
-    ];
+    //
+    // const achievements = [
+    //     {
+    //         title: "Google Play Store 출시",
+    //         description: "Nuclear-Zero 게임 상용 출시",
+    //         icon: Award
+    //     },
+    //     {
+    //         title: "게임 공모전 우수상",
+    //         description: "Nuclear-Zero 프로젝트로 수상",
+    //         icon: Target
+    //     },
+    //     {
+    //         title: "5개 이상 완성작",
+    //         description: "다양한 장르의 게임 프로젝트 완료",
+    //         icon: Gamepad2
+    //     }
+    // ];
 
     return (
         <section id="experience" className="py-20 relative" style={{backgroundColor: '#161616'}}>
@@ -68,52 +68,54 @@ export function ExperienceSection() {
                         ))}
                     </div>
 
-                    {/* Achievements */}
-                    <div>
-                        <div className="text-center mb-8">
-                            <h3 className="text-4xl font-bold text-white mb-4">주요 성과</h3>
-                            <div className="w-20 h-1 mx-auto" style={{backgroundColor: '#13FF00'}}></div>
-                        </div>
 
-                        <div className="space-y-6">
-                            {achievements.map((achievement, index) => {
-                                const Icon = achievement.icon;
-                                return (
-                                    <Card key={index} className="border-0 rounded-2xl p-6" style={{backgroundColor: '#1D1D1D'}}>
-                                        <div className="flex items-start space-x-4">
-                                            <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
-                                                 style={{backgroundColor: '#13FF00'}}>
-                                                <Icon className="w-6 h-6 text-black"/>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-lg font-semibold text-white mb-2">{achievement.title}</h4>
-                                                <p className="text-gray-300">{achievement.description}</p>
-                                            </div>
-                                        </div>
-                                    </Card>
-                                );
-                            })}
-                        </div>
-
-                        {/* Years Visual */}
-                        <div className="text-center mt-12">
+                    {/* Years Visual */}
+                    <div className="text-center mt-12">
+                        <div
+                            className="w-48 h-48 mx-auto mb-6 rounded-full border-4 flex items-center justify-center relative overflow-hidden group"
+                            style={{borderColor: '#13FF00'}}>
                             <div
-                                className="w-48 h-48 mx-auto mb-6 rounded-full border-4 flex items-center justify-center relative overflow-hidden group"
-                                style={{borderColor: '#13FF00'}}>
-                                <div
-                                    className="absolute inset-2 rounded-full border border-green-500/20 animate-spin"
-                                    style={{animationDuration: '20s'}}></div>
-                                <div
-                                    className="w-36 h-36 rounded-full flex items-center justify-center relative z-10"
-                                    style={{backgroundColor: 'rgba(19, 255, 0, 0.1)'}}>
-                                    <span className="text-4xl font-bold" style={{color: '#13FF00'}}>3+</span>
-                                </div>
+                                className="absolute inset-2 rounded-full border border-green-500/20 animate-spin"
+                                style={{animationDuration: '20s'}}></div>
+                            <div
+                                className="w-36 h-36 rounded-full flex items-center justify-center relative z-10"
+                                style={{backgroundColor: 'rgba(19, 255, 0, 0.1)'}}>
+                                <span className="text-4xl font-bold" style={{color: '#13FF00'}}>3+</span>
                             </div>
-                            <h4 className="text-xl font-bold text-white mb-2">Years</h4>
-                            <p className="text-gray-300">게임 개발 경험</p>
                         </div>
+                        <h4 className="text-xl font-bold text-white mb-2">Years</h4>
+                        <p className="text-gray-300">게임 개발 경험</p>
                     </div>
+
                 </div>
+
+                {/* Achievements */}
+                {/*<div>*/}
+                {/*    <div className="text-center mb-8">*/}
+                {/*        <h3 className="text-4xl font-bold text-white mb-4">주요 성과</h3>*/}
+                {/*        <div className="w-20 h-1 mx-auto" style={{backgroundColor: '#13FF00'}}></div>*/}
+                {/*    </div>*/}
+
+                {/*    <div className="space-y-6">*/}
+                {/*        {achievements.map((achievement, index) => {*/}
+                {/*            const Icon = achievement.icon;*/}
+                {/*            return (*/}
+                {/*                <Card key={index} className="border-0 rounded-2xl p-6" style={{backgroundColor: '#1D1D1D'}}>*/}
+                {/*                    <div className="flex items-start space-x-4">*/}
+                {/*                        <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"*/}
+                {/*                             style={{backgroundColor: '#13FF00'}}>*/}
+                {/*                            <Icon className="w-6 h-6 text-black"/>*/}
+                {/*                        </div>*/}
+                {/*                        <div>*/}
+                {/*                            <h4 className="text-lg font-semibold text-white mb-2">{achievement.title}</h4>*/}
+                {/*                            <p className="text-gray-300">{achievement.description}</p>*/}
+                {/*                        </div>*/}
+                {/*                    </div>*/}
+                {/*                </Card>*/}
+                {/*            );*/}
+                {/*        })}*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
         </section>
     );

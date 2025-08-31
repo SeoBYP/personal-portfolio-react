@@ -8,28 +8,34 @@ export function SkillsSection() {
         // Game Engines
         {id: 1, name: "Unity", category: "Game Engine", level: 5},
         {id: 2, name: "Unreal Engine", category: "Game Engine", level: 4},
-        {id: 3, name: "C#", category: "Game Engine", level: 5},
-        {id: 4, name: "C++", category: "Game Engine", level: 4},
-        {id: 5, name: "Blueprint", category: "Game Engine", level: 4},
+        {id: 3, name: "DirectX", category: "Game Engine", level: 4},
 
         // Programming
-        {id: 6, name: "C#", category: "Programming", level: 5},
-        {id: 7, name: "C++", category: "Programming", level: 4},
-        {id: 8, name: "Python", category: "Programming", level: 3},
+        {id: 5, name: "C#", category: "Programming", level: 5},
+        {id: 6, name: "C++", category: "Programming", level: 4},
+        {id: 7, name: "Java", category: "Programming", level: 3},
+        {id: 8, name: "Java Spring", category: "Programming", level: 3},
         {id: 9, name: "JavaScript", category: "Programming", level: 3},
+        {id: 10, name: "Node.js", category: "Programming", level: 3},
+        {id: 11, name: "HTML", category: "Programming", level: 3},
+        {id: 12, name: "CSS", category: "Programming", level: 2},
+        {id: 13, name: "React", category: "Programming", level: 2},
 
         // Game Development
-        {id: 10, name: "Game Design", category: "Game Development", level: 4},
-        {id: 11, name: "Level Design", category: "Game Development", level: 3},
-        {id: 12, name: "UI/UX", category: "Game Development", level: 4},
-        {id: 13, name: "Animation", category: "Game Development", level: 3},
-        {id: 14, name: "Optimization", category: "Game Development", level: 4},
+        {id: 15, name: "Game Design", category: "Game Development", level: 4},
+        {id: 16, name: "DOTS", category: "Game Development", level: 3},
+        {id: 17, name: "Optimization", category: "Game Development", level: 3},
 
         // Tools
-        {id: 15, name: "Git", category: "Tools", level: 4},
-        {id: 16, name: "Blender", category: "Tools", level: 3},
-        {id: 17, name: "Photoshop", category: "Tools", level: 3},
-        {id: 18, name: "Visual Studio", category: "Tools", level: 4}
+        {id: 20, name: "Git", category: "Tools", level: 4},
+        {id: 21, name: "GitLab", category: "Tools", level: 4},
+        {id: 22, name: "UniTask", category: "Tools", level: 4},
+        {id: 23, name: "R3", category: "Tools", level: 4},
+        {id: 24, name: "UniRx", category: "Tools", level: 4},
+        {id: 25, name: "VContainer", category: "Tools", level: 4},
+        {id: 26, name: "MessagePipe", category: "Tools", level: 4},
+        {id: 27, name: "DoTween", category: "Tools", level: 4},
+        {id: 28, name: "LitMotion", category: "Tools", level: 4},
     ];
 
     const categories = [
@@ -62,8 +68,7 @@ export function SkillsSection() {
     const getSkillsByCategory = (category) => {
         return skills
             .filter(skill => skill.category === category)
-            .sort((a, b) => b.level - a.level)
-            .slice(0, 6);
+            .sort((a, b) => b.level - a.level);
     };
 
     const getSkillLevelColor = (level) => {
